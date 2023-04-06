@@ -25,8 +25,8 @@ impl Default for CppGenerator {
 
 impl Generator for CppGenerator {
     fn begin_class(&mut self, name: &str) {
-        self.predecls += &format!("class {name};\n");
-        self.main += &format!("class {name} {{\npublic:\n");
+        self.predecls += &format!("struct {name};\n");
+        self.main += &format!("struct {name} {{\n");
     }
 
     fn end_class(&mut self) {
